@@ -48,10 +48,11 @@ The following command will calculate the per-video averaged feature vectors of a
 
 .. code-block:: shell
 
-  $ ./bin/calclbp.py
+  $ ./bin/calclbp.py --ff 50
 
-To see all the options for the scripts `calclbp.py` and `calcframelbp.py`, just type
-`--help` at the command line.
+In the above command, the face size filter is set to 50 pixels (as in the paper), and the program will discard all the frames with detected faces smaller then 50 pixels as invalid.
+
+To see all the options for the scripts `calclbp.py` and `calcframelbp.py`, just type `--help` at the command line. Change the default option in order to obtain various features, as described in the paper. 
 
 
 II. CLASSIFICATION USING CHI-2 DISTANCE
@@ -77,11 +78,11 @@ To see all the options for the scripts `mkhistmodel.py` and `cmphistmodels.py`, 
 III. CLASSIFICATION WITH LINEAR DISCRIMINANT ANALYSIS (LDA)
 -----------------------------------------------------------
 
-The classification with LDA is performed using the script `script/ldatrain_lbp.py`. It makes use of the scripts `ml/lda.py`, `ml\pca.py` (if PCA reduction is performed on the data) and `ml\norm.py` (if the data need to be normalized). The default input and output directories are `./lbp_features` and `./res`. To execute the script with the default parameters, call:
+The classification with LDA is performed using the script `script/ldatrain_lbp.py`. It makes use of the scripts `ml/lda.py`, `ml\pca.py` (if PCA reduction is performed on the data) and `ml\norm.py` (if the data need to be normalized). The default input and output directories are `./lbp_features` and `./res`. To execute the script with prior PCA dimensionality reduction as is done in the paper, call:
 
 .. code-block:: shell
 
-  $ ./bin/ldatrain_lbp.py
+  $ ./bin/ldatrain_lbp.py -r 
 
 To see all the options for this script, just type `--help` at the command line.
 
