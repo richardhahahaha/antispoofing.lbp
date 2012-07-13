@@ -90,11 +90,11 @@ To see all the options for this script, just type `--help` at the command line.
 IV. CLASSIFICATION WITH SUPPORT VECTOR MACHINE (SVM)
 ----------------------------------------------------
 
-The classification with SVM is performed using the script `script/svmtrain_lbp.py`. It makes use of the scripts `ml\pca.py` (if PCA reduction is performed on the data) and `ml\norm.py` (if the data need to be normalized). The default input and output directories are `./lbp_features` and `./res`. To execute the script with the default parameters, call:
+The classification with SVM is performed using the script `script/svmtrain_lbp.py`. It makes use of the scripts `ml\pca.py` (if PCA reduction is performed on the data) and `ml\norm.py` (if the data need to be normalized). The default input and output directories are `./lbp_features` and `./res`. To execute the script with prior normalization of the data in the range [-1, 1] as in the paper, the default parameters, call:
 
 .. code-block:: shell
 
-  $ ./bin/svmtrain_lbp.py
+  $ ./bin/svmtrain_lbp.py -n
 
 To see all the options for this script, just type `--help` at the command line.
 
